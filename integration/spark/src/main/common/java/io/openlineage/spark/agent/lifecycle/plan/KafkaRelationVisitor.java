@@ -4,9 +4,9 @@ package io.openlineage.spark.agent.lifecycle.plan;
 
 import static io.openlineage.spark.agent.util.ScalaConversionUtils.asJavaOptional;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.openlineage.client.OpenLineage;
+import io.openlineage.client.shaded.com.fasterxml.jackson.databind.JsonNode;
+import io.openlineage.client.shaded.com.fasterxml.jackson.databind.ObjectMapper;
 import io.openlineage.spark.agent.util.ScalaConversionUtils;
 import io.openlineage.spark.api.DatasetFactory;
 import io.openlineage.spark.api.OpenLineageContext;

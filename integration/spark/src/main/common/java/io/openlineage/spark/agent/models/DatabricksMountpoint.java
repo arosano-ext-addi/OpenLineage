@@ -1,7 +1,7 @@
 package io.openlineage.spark.agent.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import io.openlineage.client.shaded.com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.openlineage.client.shaded.com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
 
 @JsonIgnoreProperties(ignoreUnknown = true)

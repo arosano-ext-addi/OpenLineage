@@ -355,14 +355,18 @@ shadowJar {
     minimize()
     classifier = ''
     // avoid conflict with any client version of that lib
-    relocate 'com.github.ok2c.hc5', 'openlineage.com.github.ok2c.hc5'
-    relocate 'org.apache.httpcomponents.client5', 'openlineage.org.apache.httpcomponents.client5'
-    relocate 'javassist', 'openlineage.javassist'
-    relocate 'org.apache.hc', 'openlineage.hc'
-    relocate 'org.apache.commons.codec', 'openlineage.commons.codec'
+    relocate 'com.github.ok2c.hc5', 'io.openlineage.spark.shaded.github.ok2c.hc5'
+    relocate 'org.apache.httpcomponents.client5', 'io.openlineage.spark.shaded.org.apache.httpcomponents.client5'
+    relocate 'org.apache.hc', 'io.openlineage.spark.shaded.org.apache.hc'
+    relocate 'org.apache.commons.codec', 'io.openlineage.spark.shaded.org.apache.commons.codec'
+    relocate 'org.apache.commons.http', 'io.openlineage.spark.shaded.org.apache.commons.http'
+    relocate 'org.apache.client', 'io.openlineage.spark.shaded.org.apache.client'
+    relocate 'javassist', 'io.openlineage.spark.shaded.javassist'
     dependencies {
         exclude(dependency('org.slf4j::'))
+        exclude(dependency('com.fasterxml.jackson..*:.*:.*'))
     }
+    exclude 'io/org/apache/commons/logging/**'
 
     manifest {
         attributes(
