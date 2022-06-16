@@ -1,7 +1,7 @@
 package io.openlineage.spark.agent.facets;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.openlineage.client.OpenLineage;
-import io.openlineage.client.shaded.com.fasterxml.jackson.annotation.JsonProperty;
 import io.openlineage.spark.agent.EventEmitter;
 import java.util.Map;
 

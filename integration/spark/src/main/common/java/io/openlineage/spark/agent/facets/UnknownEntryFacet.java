@@ -4,8 +4,8 @@ package io.openlineage.spark.agent.facets;
 
 import static io.openlineage.spark.agent.EventEmitter.OPEN_LINEAGE_PRODUCER_URI;
 
+import com.fasterxml.jackson.annotation.JsonRawValue;
 import io.openlineage.client.OpenLineage;
-import io.openlineage.client.shaded.com.fasterxml.jackson.annotation.JsonRawValue;
 import java.util.List;
 import java.util.Map;
 import lombok.EqualsAndHashCode;
