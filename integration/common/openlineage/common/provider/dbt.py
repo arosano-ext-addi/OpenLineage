@@ -7,7 +7,7 @@ import logging
 import os
 import uuid
 from enum import Enum
-from typing import Dict, List, Optional, Tuple, TypeVar, Any
+from typing import Any, Dict, List, Optional, Tuple, TypeVar
 
 import attr
 import yaml
@@ -20,7 +20,6 @@ from openlineage.client.facet import (Assertion, BaseFacet,
                                       SchemaField, SqlJobFacet)
 from openlineage.client.run import (Dataset, Job, OutputDataset, Run, RunEvent,
                                     RunState)
-
 from openlineage.common.schema import GITHUB_LOCATION
 from openlineage.common.utils import (get_from_multiple_chains,
                                       get_from_nullable_chain)
@@ -32,6 +31,7 @@ class Adapter(Enum):
     SNOWFLAKE = 'snowflake'
     REDSHIFT = 'redshift'
     SPARK = 'spark'
+    DATABRICKS = 'databricks'
 
     @staticmethod
     def adapters() -> str:
@@ -671,6 +671,8 @@ class DbtArtifactProcessor:
             return "bigquery"
         elif self.adapter_type == Adapter.REDSHIFT:
             return f"redshift://{profile['host']}:{profile['port']}"
+        elif self.adapter_type == Adapter.DATABRICKS:
+            return f"databricks://{profile['host']}:{profile['port']}/?path={profile['endpoint_path']}"  
         elif self.adapter_type == Adapter.SPARK:
             port = ""
 
