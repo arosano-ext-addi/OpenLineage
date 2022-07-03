@@ -672,7 +672,7 @@ class DbtArtifactProcessor:
         elif self.adapter_type == Adapter.REDSHIFT:
             return f"redshift://{profile['host']}:{profile['port']}"
         elif self.adapter_type == Adapter.DATABRICKS:
-            return f"databricks://{profile['host']}:{profile['port']}/?path={profile['endpoint_path']}"  
+            return f"databricks://{profile['host']}:{profile['port']}/?path={profile['http_path']}"  
         elif self.adapter_type == Adapter.SPARK:
             port = ""
 
